@@ -1,0 +1,35 @@
+<html lang="pt-br">
+
+	<head th:replace="~{componentes :: head}">
+	</head>
+	
+	
+	<body>
+		
+		<div class="container">
+		
+			
+			<div class="mt-5">
+				
+				<form th:action="@{/telefone/novo/{id}(id = ${pessoa})}" method="post">
+				
+					<div class="row">
+						<div class="col">						
+							<label for="telefone" class="form-label">Telefone: </label>
+							<input type="text" name="telefone" class="form-control" placeholder="Numero do contato...">
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary mt-5">Submit</button>
+					
+				</form>
+				
+			</div>
+			
+		
+		</div>
+		
+			
+		
+	</body>
+	
+</html>

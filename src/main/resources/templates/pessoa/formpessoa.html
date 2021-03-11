@@ -1,0 +1,64 @@
+<html lang="pt-br">
+
+	<head th:replace="~{componentes :: head}">
+	</head>
+	
+	
+	<body>
+	
+	
+		<div class="container mt-5">
+		
+		
+			<div >
+				
+				<form action="/pessoa/novo" method="post">
+				
+					<div class="row">
+						<div class="col">						
+							<label for="nome" class="form-label">Nome: </label>
+							<input type="text" name="nome" class="form-control" placeholder="Nome...">
+						</div>
+					</div>
+				<button type="submit" class="btn btn-primary mt-5">Submit</button>
+				</form>
+			
+			</div>
+			
+			<div class="mt-5">
+			
+				<div class="row">
+					<div class="col">
+					
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th scope="col">Nome</th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody th:each="pessoa: ${pessoas}">
+								<tr>
+									<td th:text="${pessoa.nome}"></td>
+									<td>
+										<a class="nav-link" aria-current="page" th:href="@{/pessoa/detalhes/{id}(id = ${pessoa.id})}"
+										>Detalhes</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					
+					</div>
+				</div>
+				
+			</div>
+		
+		
+		</div>
+	
+	
+	
+	</body>
+
+
+</html>

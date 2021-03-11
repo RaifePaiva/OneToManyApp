@@ -1,0 +1,50 @@
+<html lang="pt-br">
+
+	<head th:replace="~{componentes :: head}">
+	</head>
+	
+	
+	<body>
+	
+		<div class="container">
+		
+			<div class="mt-5">
+			
+				<h3 th:text="${pessoa.nome}"></h3>
+				
+				<div class="mt-5">
+					<a class="nav-link" aria-current="page" th:href="@{/telefone/form/{id}(id = ${pessoa.id})}">Add contato</a>
+				</div>
+				
+				<div class="card mt-5">
+				  <div class="card-header">
+					telefones
+				  </div>
+				  <div class="card-body">
+				    
+				    <table class="table table-striped">
+				    	<thead>
+				    		<tr>
+				    			<th scope="col">ID</th>
+				    			<th scope="col">Numero</th>
+				    		</tr>
+				    	</thead>
+				    	<tbody th:each="telefone: ${pessoa.telefones}">
+				    		<tr>
+				    			<td th:text="${telefone.id}"></td>
+				    			<td th:text="${telefone.telefone}"></td>
+				    		</tr>
+				    	</tbody>
+				    </table>
+				    
+				  </div>
+				</div>
+			
+			</div>
+		
+		</div>
+		
+	
+	</body>
+	
+</html>
